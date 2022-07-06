@@ -1,0 +1,52 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<title>Administration</title>	
+	
+	
+<script>
+ function home()
+{
+
+document.f1.action="index.html"
+  
+}
+
+function logout()
+{
+
+document.f1.action="adminlogin.html"
+  
+}
+
+</script>
+
+	</head>
+<body background="bg.png">
+<form name="f1" method="get">
+<div align="right">
+            <input name="Home" type="submit" value="Home" onclick="home()" color="blue"> 
+ &nbsp&nbsp <input name="Logout" type="submit" value="Logout" onClick="logout()" color="blue"> 
+ </div>
+<div align="middle">
+<div align="center">
+	<br/><br/><br/>
+		<h1>Administration</h1><br/><br/>
+			<form>
+		<div>
+<h3>Admin Services<h3><br/><br/>
+  		</div>
+			<div>
+    <h4> * <a href="updatelocation.html">Upload Location Details</a><h4>
+			</div>
+			<br/>
+			<br/>
+			<div>
+			<h4> * <a href="pages/userlist.jsp">View Users List</a><h4>
+			</div>			
+		</form>
+	</div>
+	</div>
+	</form>
+</body>
+</html>

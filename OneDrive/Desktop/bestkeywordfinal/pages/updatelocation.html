@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+ <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&libraries=places"></script>
+ 
+<script>		    	 
+        function initialize() 
+		{       
+		var a = document.getElementById('place').value;	 	
+           var address = a;
+            geocoder = new google.maps.Geocoder();
+            geocoder.geocode({
+            'address': address
+            }, function(results, status) {      
+                var lat=document.getElementById("lat").innerHTML=results[0].geometry.location.lat();    
+                var lng=document.getElementById("lng").innerHTML=results[0].geometry.location.lng();        
+			document.getElementById('lat').value = lat; 
+			document.getElementById('lng').value = lng; 
+            });
+        }
+		  google.maps.event.addDomListener(window, 'load', initialize());
+		  
+		  
+		  function add()
+		  {
+		 var a=document.getElementById('place').value;
+		 
+		 var b=document.f1.location.value
+		var c=document.f1.keynames.value
+		var d=document.f1.rooms.value
+		var g=document.f1.bar.value
+		var h=document.f1.restaurant.value
+		var e=document.getElementById('lat').value;
+		var f=document.getElementById('lng').value;
+			
+
+		  	document.getElementById('places').value = a; 
+			document.getElementById('latt').value = e;	
+			document.getElementById('lngg').value = f;
+			document.f1.action="pages/updateloc.jsp";
+		  }
+		  
+        </script>
+</head>
+<body background="aaa.jpg">
+
+
+<div align="center">
+	<br/>
+		<h1>Upload Location Details</h1><br/><br/>
+	
+Place       :&nbsp; <input type="text" id="place" name="place"/> &nbsp;&nbsp;&nbsp;&nbsp; <button type="submit" id="addlocation" onclick="initialize()">Get Latitude & Longitude</button>
+</br></br></br>
+Latitude    :&nbsp; <input type="text" id="lat" name="lat"/> &nbsp;&nbsp;&nbsp;&nbsp; Longitude    :&nbsp; <input type="text" id="lng" name="lng""/></br></br></br>
+<form name="f1" method="get">
+Location    :&nbsp; <input type= "text"  name="location"/></br></br></br>
+Keynames    :&nbsp; <input type="text" name="keynames"/><br/><br/><br/>
+Rooms         :&nbsp; <select name=rooms>
+                     <option name=yes value=yes> Yes </option>
+                      <option name=no value=no> No </option>
+                         </select><br/><br/><br/>
+Bar         :&nbsp; <select name=bar>
+                     <option name=yes value=yes> Yes </option>
+                      <option name=no value=no> No </option>
+                         </select><br/><br/><br/>
+Restaurant  :&nbsp;	<select name=restaurant>
+                     <option name=yes value=yes> Yes </option>
+                      <option name=no value=no> No </option>
+                         </select>					<br/><br/><br/> 
+<button type="submit" id="addlocation" onclick="add()">Add Location</button>
+<input type="hidden" name="places" id="places">
+<input type="hidden" name="latt" id="latt">
+<input type="hidden" name="lngg" id="lngg">
+</form>
+	
+</body>
+</html>

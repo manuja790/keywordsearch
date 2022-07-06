@@ -1,0 +1,62 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	
+	<title>Login</title>
+	
+	<script>
+
+
+function validate()
+ {
+var a=document.f1.username.value
+var b=document.f1.password.value
+if(a=="")
+{
+  alert("enter the username");
+  
+}
+else if(b=="")
+ {
+  alert("enter the password");
+  
+ }
+else{
+
+document.f1.action="pages/userlogin.jsp"
+}
+ }
+
+</script>
+	
+	
+	</head>
+<body background="22.jpg">
+<div align="middle">
+<div align="center">
+	<div class="lg-container">
+	<br/><br/><br/><br/><br/>
+		<h1>User Login</h1><br/><br/>
+			<form name="f1" method="get">
+			<div>
+				<label for="username">Username:</label>
+				<input type="text" name="username" id="username" placeholder="username"/>
+			</div>
+			<br/>
+			<br/>
+			<div>
+				<label for="password">Password:</label>
+				<input type="password" name="password" id="password" placeholder="password" />
+			</div>
+			<br/><br/>
+			<div>				
+				<button type="submit" id="login" onclick="validate()">Login</button>
+			</div>
+			
+		</form>
+		<div id="message"></div>
+	</div>
+	</div>
+	</div>
+</body>
+</html>

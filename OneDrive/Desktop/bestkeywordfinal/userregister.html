@@ -1,0 +1,105 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>Register</title>
+
+<script>
+function valid()
+{
+  var a=document.f1.username.value
+  var b=document.f1.firstname.value
+  var c=document.f1.lastname.value
+  var d=document.f1.password.value
+  var f=document.f1.dob.value
+  var g=document.f1.email.value
+  var h=document.f1.phone.value
+  
+  if(a=="")
+  {
+    alert("enter the username");
+	return false;
+	}
+	
+  else if(b=="")
+  {
+   alert("enter the firstname");
+   return false;
+   }
+   
+   else if(c="")
+   {
+    alert("enter the lastname");
+	return false;
+	}
+	
+	else if(d="")
+	{
+	 alert("enter the password");
+	return false;
+	 }
+	 
+	 else if((document.f1.gender[0].checked==false)&&(document.f1.gender[1].checked==false))
+	 {
+	  alert("enter the gender");
+	 return false;
+	  }
+	  
+	  else if(f="")
+	  {
+	   alert("enter ur DOB");
+	 return false;
+	   }
+	   
+	   else if(g="")
+	   {
+	    alert("enter the email");
+		return false;
+		}
+		
+		else if(h="")
+		{
+		 alert("enter mob no");
+		return false;
+		 }
+		 
+		  }
+		  else
+		  {
+		   alert("success");
+		   return true;
+		   }
+		   }
+		   
+		  
+  
+  
+   </script>
+</head>
+<body background="rr.jpg">
+<div align="center">
+<h1>     Registration Form</h1><br/>
+</div>
+<div align="center">
+<form name="f1" action="pages/userreg.jsp" method="get">
+
+USERNAME    :&nbsp; <input type="text" name="username"/></br></br></br>
+First Name  :&nbsp; <input type= "text"  name="firstname"/>
+Last Name   :&nbsp; <input type= "text"  name="lastname"/><br><br>
+Password   &nbsp;&nbsp; :&nbsp; <input type= "password"  name="password"/><br><br>
+Gender  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    :&nbsp; <input type= "radio" name="gender" value="male" checked/>Male
+             &nbsp;
+			 <input type= "radio" name="gender" value="female"/>Female<br><br>		  
+DOB  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;       :&nbsp; <input type= "text" name="dob"/><br><br>
+Email  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;     :&nbsp; <input type=  "text"  name="email"/><br><br>
+Phone   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    :&nbsp <input type= "text" name="phone"/><br><br>
+&nbsp;<input type= "submit" name="submit" value="submit" onclick="return valid();">&nbsp;&nbsp;&nbsp;&nbsp;
+
+ <br>
+       <br>
+      
+	   
+	   
+</form>
+</div>
+</body>
+</html>
